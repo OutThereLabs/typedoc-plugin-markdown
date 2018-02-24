@@ -6,17 +6,17 @@ export function getMemberSymbol(kindString: string) {
   let symbol = '';
   switch (kindString) {
     case 'Constructor signature':
-      symbol = '⊕ ';
+      symbol = '';
       break;
     case 'Call signature':
-      symbol = '► ';
+      symbol = '';
       break;
     case 'Type alias':
-      symbol = 'Τ';
+      symbol = '';
       break;
     case 'Property':
     case 'Variable':
-      symbol = '● ';
+      symbol = '';
       break;
     default:
   }
