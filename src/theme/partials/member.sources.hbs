@@ -3,15 +3,15 @@
 {{getNewLine}}
 {{~/if~}}
 {{~#if inheritedFrom~}}
-*Inherited from {{#with inheritedFrom}}{{> typeAndParent}}{{/with}}*
+<small>*Inherited from {{#with inheritedFrom}}{{> typeAndParent}}{{/with}}*</small>
 {{getNewLine}}
 {{~/if~}}
 {{~#if overwrites~}}
-*Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}*
+<small>*Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}*</small>
 {{getNewLine}}
 {{~/if~}}
 {{#if sources}}
 {{#each sources}}
-*{{getSourceFile fileName line url}}*
+<small>*{{getSourceFile fileName line url}}*</small>
 {{/each}}
 {{/if}}

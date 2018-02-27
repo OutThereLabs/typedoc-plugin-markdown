@@ -1,23 +1,25 @@
 {{{getAnchor anchor}}}
 
 {{#if name}}
-### {{#each flags}}«{{this}}»{{/each}} {{name}}
+#### {{#each flags}}«{{this}}»{{/each}} {{name}}
 {{/if}}
+
+{{>comment}}
 
 {{#if signatures}}
 {{> member.signatures}}
 {{else}}{{#if hasGetterOrSetter}}
 {{> member.getterSetter}}
 {{else}}
-{{> member.declaration}}
+{{#unless children}}{{> member.declaration}}{{/unless}}
 {{/if}}{{/if}}
 
 {{#each groups}}
+
+### {{title}}
 {{#each children}}
 {{#unless hasOwnDocument}}
 {{> member}}
 {{/unless}}
 {{/each}}
 {{/each}}
-
-___

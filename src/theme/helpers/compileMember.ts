@@ -20,6 +20,9 @@ export function compileMember(member: DeclarationReflection) {
       case ReflectionKind.ObjectLiteral:
         md = ThemeService.compilePartial('member.object.hbs', member);
         break;
+      case ReflectionKind.ExternalModule:
+        md = ThemeService.compilePartial('member.object.hbs', member);
+        break;
       default:
         md = ThemeService.compilePartial('member.hbs', member);
     }

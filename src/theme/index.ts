@@ -11,42 +11,6 @@ import { ThemeService } from './service';
 export class MarkdownTheme extends DefaultTheme {
 
   /**
-   * This is mostly a copy of the DefaultTheme method with .html ext switched to .md
-   * Builds the url for the the given reflection and all of its children.
-   *
-   * @param reflection  The reflection the url should be created for.
-   * @param urls The array the url should be appended to.
-   * @returns The altered urls array.
-   */
-  public static buildUrls(reflection: DeclarationReflection, urls: UrlMapping[]): UrlMapping[] {
-
-    const mapping = DefaultTheme.getMapping(reflection);
-
-    if (mapping) {
-      if (!reflection.url || !DefaultTheme.URL_PREFIX.test(reflection.url)) {
-        const url = [mapping.directory, DefaultTheme.getUrl(reflection) + '.md'].join('/');
-        urls.push(new UrlMapping(url, reflection, mapping.template));
-        reflection.url = url;
-        reflection.hasOwnDocument = true;
-      }
-      for (const key in reflection.children) {
-        if (reflection.children.hasOwnProperty(key)) {
-          const child = reflection.children[key];
-          if (mapping.isLeaf) {
-            MarkdownTheme.applyAnchorUrl(child, reflection);
-          } else {
-            MarkdownTheme.buildUrls(child, urls);
-          }
-        }
-      }
-    } else {
-      MarkdownTheme.applyAnchorUrl(reflection, reflection.parent);
-    }
-
-    return urls;
-  }
-
-  /**
    * Similar to DefaultTheme method with added functionality to cater for bitbucket heading and single file anchors
    * Generate an anchor url for the given reflection and all of its children.
    *
@@ -162,18 +126,18 @@ export class MarkdownTheme extends DefaultTheme {
 
     // pass in additional context
     const additionalContext = {
-      displayReadme: this.application.options.getValue('readme') !== 'none',
+      displayReadme: this.application.options.getValue('index') !== 'none',
       hideBreadcrumbs: true,
       isIndex: true,
     };
 
     const context = Object.assign(entryPoint, additionalContext);
 
-    urls.push(new UrlMapping('README.md', context, 'reflection.hbs'));
+    urls.push(new UrlMapping('index.md', context, 'reflection.hbs'));
 
     if (entryPoint.children) {
       entryPoint.children.forEach((child: DeclarationReflection) => {
-        MarkdownTheme.buildUrls(child, urls);
+        MarkdownTheme.applyAnchorUrl(child, entryPoint);
       });
     }
 

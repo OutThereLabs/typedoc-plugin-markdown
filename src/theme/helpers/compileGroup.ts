@@ -18,8 +18,7 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
 
     const isMainTitle = options.mode === 0 && parent === undefined;
 
-    if (
-      group.kind === ReflectionKind.ObjectLiteral) {
+    if (group.kind === ReflectionKind.ObjectLiteral) {
       displayTitle = false;
     }
 
