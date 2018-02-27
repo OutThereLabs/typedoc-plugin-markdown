@@ -107,7 +107,7 @@ export class MarkdownTheme extends DefaultTheme {
    */
   public isOutputDirectory(outPath: string): boolean {
     const files = fs.readdirSync(outPath);
-    return fs.existsSync(path.join(outPath, 'README.md')) || (files.length === 1 && path.extname(files[0]) === '.md');
+    return fs.existsSync(path.join(outPath, 'index.md')) || (files.length === 1 && path.extname(files[0]) === '.md');
   }
 
   /**
@@ -126,7 +126,7 @@ export class MarkdownTheme extends DefaultTheme {
 
     // pass in additional context
     const additionalContext = {
-      displayReadme: this.application.options.getValue('index') !== 'none',
+      displayReadme: this.application.options.getValue('readme') !== 'none',
       hideBreadcrumbs: true,
       isIndex: true,
     };
