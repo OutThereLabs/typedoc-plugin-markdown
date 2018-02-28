@@ -14,12 +14,18 @@ export function compileGroup(group: ReflectionGroup, parent: any) {
   let md = '';
 
   if (!options.excludePrivate || !group.allChildrenArePrivate) {
-    let displayTitle = true;
+    var displayTitle = false;
 
     const isMainTitle = options.mode === 0 && parent === undefined;
 
-    if (group.kind === ReflectionKind.ObjectLiteral) {
-      displayTitle = false;
+    switch (group.kind) {
+      case ReflectionKind.Property:
+      case ReflectionKind.Method:
+      case ReflectionKind.Function:
+        displayTitle = true;
+        break;
+      default:
+        break;
     }
 
     md = ThemeService.compilePartial(`members.group.hbs`,

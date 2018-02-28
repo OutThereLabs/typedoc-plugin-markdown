@@ -7,9 +7,5 @@
 {{> comment}}
 
 {{#each groups}}
-{{#each children}}
-{{#unless hasOwnDocument}}
-{{> member}}
-{{/unless}}
-{{/each}}
+{{{compileGroup this}}}
 {{/each}}

@@ -2,6 +2,6 @@
 {{> index}}
 {{#each groups}}
 {{#unless allChildrenHaveOwnDocument}}
-{{> members.group }}
+{{{compileGroup this}}}
 {{/unless}}
 {{/each}}

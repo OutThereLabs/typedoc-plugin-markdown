@@ -23,6 +23,18 @@ export function compileMember(member: DeclarationReflection) {
       case ReflectionKind.ExternalModule:
         md = ThemeService.compilePartial('member.object.hbs', member);
         break;
+      case ReflectionKind.Property:
+        md = ThemeService.compilePartial('member.property.hbs', member);
+        break;
+      case ReflectionKind.Method:
+        md = ThemeService.compilePartial('member.method.hbs', member);
+        break;
+      case ReflectionKind.Class:
+        md = ThemeService.compilePartial('member.class.hbs', member);
+        break;
+      case ReflectionKind.Function:
+        md = ThemeService.compilePartial('member.function.hbs', member);
+        break;
       default:
         md = ThemeService.compilePartial('member.hbs', member);
     }

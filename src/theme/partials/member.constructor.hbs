@@ -3,7 +3,7 @@
 {{#if signatures}}
 {{#each signatures}}
 
-### {{> member.signature.title }}
+{{> member.signature.title }}
 
 {{/each}}
 {{#each signatures}}
@@ -13,15 +13,11 @@
 {{#if hasGetterOrSetter}}
 {{> member.getterSetter}}
 {{else}}
-{{> member.declaration}} 
+{{> member.declaration}}
 {{/if}}
 {{/if}}
 {{#each groups}}
-{{#each children}}
-{{#unless hasOwnDocument}}
-{{> member}}
-{{/unless}}
-{{/each}}
+{{{compileGroup this}}}
 {{/each}}
 
 ---
