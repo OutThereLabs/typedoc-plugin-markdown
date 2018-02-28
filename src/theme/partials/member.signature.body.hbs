@@ -1,10 +1,3 @@
-
-{{#unless hideSources}}
-{{{ compileSources this}}}
-{{/unless}}
-
-{{> comment}}
-
 {{#if typeParameters}}
 **Type parameters:**
 {{> typeParameters}}
@@ -17,3 +10,7 @@
 {{{comment.returns}}}
 {{/if}}
 {{/if}}
+
+{{#unless hideSources}}
+{{{ compileSources this}}}
+{{/unless}}
