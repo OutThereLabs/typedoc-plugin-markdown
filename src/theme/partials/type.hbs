@@ -1,7 +1,7 @@
 {{#compact}}
 {{#if this}}
 {{#if reflection}}
-[{{reflection.name}}]({{ relativeURL reflection.url }})
+[{{{reflection.name}}}]({{ relativeURL reflection.url }})
 {{#if typeArguments}}
 {{#each typeArguments}}
 {{#if @index}}, {{/if}}{{> type}}{{/each}}{{/if}}
@@ -23,12 +23,12 @@
 [{{#each elements}}{{#if @index}},{{/if}}{{> type}}{{/each}}]
 {{else}}
 {{#if name}}
-`{{name}}`
+`{{{name}}}`
 {{else}}
 {{#if value}}
 "{{value}}"
 {{else}}
-`{{this}}`
+`{{{this}}}`
 {{/if}}
 {{/if}}
 {{#if typeArguments}}

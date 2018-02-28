@@ -8,10 +8,16 @@
 
 {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
 {{/if}}
+{{getNewLine}}
 {{~#if tags}}
 {{#each tags}}
+{{#ifCond tagName '==' 'example'}}
+**Example**:
+{{{text}}}
+{{else}}
 *__{{tagName}}__*: {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}
-
+{{getNewLine}}
+{{/ifCond}}
 {{/each}}
 {{~/if}}
 
