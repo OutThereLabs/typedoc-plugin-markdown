@@ -25,6 +25,13 @@ module.exports = (PluginHost: Application) => {
 
   app.options.addDeclaration({
     component: 'markdown',
+    help: 'Markdown Plugin: Git branch to point source links at',
+    name: 'mdSourceBranch',
+    type: ParameterType.String,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
     defaultValue: '',
     help: 'The repository to use for source files (ignored unless markdownFlavour is set)',
     name: 'mdSourceRepo',
