@@ -1,0 +1,17 @@
+{{#if hasRelationships}}
+#### Relationships
+{{#if implementedTypes}}
+##### Implements
+{{#each implementedTypes}}
+* {{> typeAndParent}}
+{{/each}}
+{{/if}}
+{{#if implementationOf}}
+##### Implementation Of
+{{#with implementationOf}}{{> typeAndParent}}{{/with}}
+{{/if}}
+{{#if overwrites}}
+##### Overrides
+* {{#with overwrites}}{{> typeAndParent}}{{/with}}
+{{/if}}
+{{/if}}

@@ -1,15 +1,3 @@
-{{~#if implementationOf~}}
-*Implementation of {{#with implementationOf}}{{> typeAndParent}}{{/with}}*
-{{getNewLine}}
-{{~/if~}}
-{{~#if inheritedFrom~}}
-<small>*Inherited from {{#with inheritedFrom}}{{> typeAndParent}}{{/with}}*</small>
-{{getNewLine}}
-{{~/if~}}
-{{~#if overwrites~}}
-<small>*Overrides {{#with overwrites}}{{> typeAndParent}}{{/with}}*</small>
-{{getNewLine}}
-{{~/if~}}
 {{#if sources}}
 {{#each sources}}
 <small>*{{getSourceFile fileName line url}}*</small>
