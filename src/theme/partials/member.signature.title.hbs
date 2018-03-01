@@ -1,4 +1,7 @@
 {{#compact}}
+{{#if flags.isPrivate}}
+private&nbsp;
+{{/if}}
 {{#ifCond kindString '==' 'Call signature'}}
 func&nbsp;
 {{/ifCond}}
