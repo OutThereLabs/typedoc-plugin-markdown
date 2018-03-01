@@ -9,22 +9,22 @@ function&nbsp;
 {{#if typeParameters}}
 {{#each typeParameters}}
 {{#if @index}}, {{/if}}
-{{name}}
+{{{name}}}
 {{/each}}
 {{/if}}
 (
 {{#each parameters}}
 {{#if @index}},&nbsp;{{/if}}
 {{#if flags.isRest}}...{{/if}}
-{{name}}
+{{{name}}}
 {{#if flags.isOptional}}?{{/if}}
 {{#if defaultValue}}?{{/if}}
 :&nbsp;
-{{type}}
+{{{type}}}
 {{/each}}
 )
 {{#if type}}
 :&nbsp;
-{{type}}
+{{{type}}}
 {{/if}}
 {{/compact}}
