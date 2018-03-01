@@ -28,7 +28,8 @@
     {{{type}}}
   {{/each}}
   )
-  {{#conditional type '!=' 'void'}}
+  {{#conditional type '==' 'void'}}
+  {{else}}
     :&nbsp;
     {{{type}}}
   {{/conditional}}

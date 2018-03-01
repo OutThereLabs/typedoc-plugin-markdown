@@ -4,11 +4,13 @@
 {{/if}}
 {{> member.parameters}}
 {{#if type}}
-
+{{#conditional type '==' 'void'}}
+{{else}}
 #### Return Value
 {{#with type}}{{>type}}{{/with}}
 {{getNewLine}}
 {{#if comment.returns}}
 {{{comment.returns}}}
 {{/if}}
+{{/conditional}}
 {{/if}}
