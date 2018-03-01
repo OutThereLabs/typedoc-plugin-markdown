@@ -12,7 +12,7 @@ export function compileMember(member: DeclarationReflection) {
 
   let md = '';
 
-  if (!(options.excludePrivate && member.flags.isPrivate)) {
+  if (!(options.excludePrivate && member.flags.isPrivate) && !member.inheritedFrom) {
     switch (member.kind) {
       case ReflectionKind.Constructor:
         md = ThemeService.compilePartial('member.constructor.hbs', member);
