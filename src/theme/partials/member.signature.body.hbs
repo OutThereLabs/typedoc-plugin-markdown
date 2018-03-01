@@ -7,14 +7,14 @@
 {{#conditional type '==' 'void'}}
 {{#if comment.returns}}
 ##### Return Value
-_{{{comment.returns}}}_
+{{{comment.returns}}}
 {{/if}}
 {{else}}
 ##### Return Value
 {{#with type}}{{>type}}{{/with}}
 {{getNewLine}}
 {{#if comment.returns}}
-_{{{comment.returns}}}_
+{{{comment.returns}}}
 {{/if}}
 {{/conditional}}
 {{/if}}
