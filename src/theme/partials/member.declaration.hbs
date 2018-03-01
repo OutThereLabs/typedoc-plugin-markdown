@@ -1,4 +1,6 @@
-`{{ name }}: {{#if isOptional}}?{{/if}} {{#if type}}{{{type}}}{{/if}} {{#if defaultValue}} = {{{ defaultValue}}}{{/if}}`
+```javascript
+var {{ name }}: {{#if type}}{{{type}}}{{/if}}{{#if isOptional}}?{{/if}} {{#if defaultValue}} = {{{ defaultValue}}}{{/if}}
+```
 
 {{> comment}}
 
@@ -8,5 +10,3 @@
 {{> parameter}}
 {{~/with~}}
 {{~/if~}}
-
-{{{ compileSources this}}}
