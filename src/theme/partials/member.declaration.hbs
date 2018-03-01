@@ -1,5 +1,5 @@
 ```javascript
-{{#if isPrivate}}private {{/if}}var {{ name }}: {{#if type}}{{{type}}}{{/if}}{{#if isOptional}}?{{/if}}{{#if defaultValue}} = {{{ defaultValue}}}{{/if}}
+{{#if flags.isPrivate}}private {{/if}}var {{ name }}: {{#if type}}{{{type}}}{{/if}}{{#if isOptional}}?{{/if}}{{#if defaultValue}} = {{{ defaultValue}}}{{/if}}
 ```
 
 {{~#if type.declaration~}}

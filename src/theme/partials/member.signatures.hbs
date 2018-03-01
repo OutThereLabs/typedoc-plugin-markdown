@@ -6,6 +6,9 @@
 ```typescript
 {{> member.signature.title }}
 {{getNewLine}}```
+{{#unless hideSources}}
+{{{ compileSources this}}}
+{{/unless}}
 {{getNewLine}}
 {{> member.signature.body }}
 {{getNewLine}}
