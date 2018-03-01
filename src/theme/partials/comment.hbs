@@ -12,7 +12,7 @@
 {{~#if tags}}
 {{#each tags}}
 {{#ifCond tagName '==' 'example'}}
-**Example**:
+#### Example
 {{{text}}}
 {{else}}
 *__{{tagName}}__*: {{#getMarkdownFromHtml}}{{#markdown}}{{{text}}}{{/markdown}}{{/getMarkdownFromHtml}}

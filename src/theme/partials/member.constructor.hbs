@@ -1,10 +1,10 @@
 {{{getAnchor anchor}}}
-
+### constructor
 {{#if signatures}}
 {{#each signatures}}
-
+```typescript
 {{> member.signature.title }}
-
+{{getNewLine}}```
 {{/each}}
 {{#each signatures}}
 {{> member.signature.body }}
@@ -19,5 +19,3 @@
 {{#each groups}}
 {{{compileGroup this}}}
 {{/each}}
-
----

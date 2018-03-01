@@ -1,8 +1,11 @@
 {{#each signatures}}
 {{> comment}}
 {{getNewLine}}
-**Declaration:**
+#### Declaration
+{{getNewLine}}
+```typescript
 {{> member.signature.title }}
+{{getNewLine}}```
 {{getNewLine}}
 {{> member.signature.body }}
 {{getNewLine}}
