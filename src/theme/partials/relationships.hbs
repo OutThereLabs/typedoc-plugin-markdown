@@ -1,23 +1,23 @@
 {{#if hasRelationships}}
 ### Relationships
 {{#if extendedTypes}}
-#### Extends
+##### Extends
 {{#each extendedTypes}}
 * {{> typeAndParent}}
 {{/each}}
 {{/if}}
 {{#if implementedTypes}}
-#### Implements
+##### Implements
 {{#each implementedTypes}}
 * {{> typeAndParent}}
 {{/each}}
 {{/if}}
 {{#if implementationOf}}
-#### Implementation Of
+##### Implementation Of
 * {{#with implementationOf}}{{> typeAndParent}}{{/with}}
 {{/if}}
 {{#if overwrites}}
-#### Overrides
+##### Overrides
 * {{#with overwrites}}{{> typeAndParent}}{{/with}}
 {{/if}}
 {{/if}}
