@@ -1,7 +1,9 @@
-## {{kindString }} {{ name }}
-{{> index}}
+---
+
+{{{getAnchor anchor}}}
+
+{{> comment}}
+
 {{#each groups}}
-{{#unless allChildrenHaveOwnDocument}}
 {{{compileGroup this}}}
-{{/unless}}
 {{/each}}

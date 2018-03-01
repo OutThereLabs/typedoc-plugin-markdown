@@ -13,8 +13,8 @@ export function conditional(v1: any, operator: any, v2: any, options: any) {
         case '==':
             // tslint:disable-next-line:triple-equals
             return (v1 == v2) ? options.fn(this) : options.inverse(this);
-        case '!==':
-            return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+        case '!=':
+            return (v1 != v2) ? options.fn(this) : options.inverse(this);
         case '===':
             return (v1 === v2) ? options.fn(this) : options.inverse(this);
         case '<':

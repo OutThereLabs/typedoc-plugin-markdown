@@ -21,7 +21,7 @@ export function compileMember(member: DeclarationReflection) {
         md = ThemeService.compilePartial('member.object.hbs', Object.assign(member, { hasRelationships }));
         break;
       case ReflectionKind.ExternalModule:
-        md = ThemeService.compilePartial('member.object.hbs', Object.assign(member, { hasRelationships }));
+        md = ThemeService.compilePartial('member.module.hbs', Object.assign(member, { hasRelationships }));
         break;
       case ReflectionKind.Property:
         md = ThemeService.compilePartial('member.property.hbs', Object.assign(member, { hasRelationships }));

@@ -1,16 +1,20 @@
 {{#if typeParameters}}
-#### Type parameters
+##### Type parameters
 {{> typeParameters}}
 {{/if}}
 {{> member.parameters}}
 {{#if type}}
 {{#conditional type '==' 'void'}}
+{{#if comment.returns}}
+##### Return Value
+_{{{comment.returns}}}_
+{{/if}}
 {{else}}
-#### Return Value
+##### Return Value
 {{#with type}}{{>type}}{{/with}}
 {{getNewLine}}
 {{#if comment.returns}}
-{{{comment.returns}}}
+_{{{comment.returns}}}_
 {{/if}}
 {{/conditional}}
 {{/if}}
