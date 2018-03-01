@@ -11,7 +11,7 @@ export function compileMember(member: DeclarationReflection) {
   const options = ThemeService.getOptions();
 
   let md = '';
-  let hasRelationships = (member.implementedTypes || member.implementationOf || member.overwrites)
+  let hasRelationships = (member.implementedTypes || member.implementationOf || member.overwrites || member.extendedTypes);
   if (!(options.excludePrivate && member.flags.isPrivate) && !member.inheritedFrom) {
     switch (member.kind) {
       case ReflectionKind.Constructor:
