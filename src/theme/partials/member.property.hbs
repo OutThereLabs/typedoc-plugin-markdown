@@ -3,17 +3,5 @@
 {{#if name}}
 #### {{#each flags}}«{{this}}»{{/each}} {{name}}
 {{/if}}
-
+{{>member.declaration}}
 {{>comment}}
-
-{{#if signatures}}
-{{> member.signatures}}
-{{else}}{{#if hasGetterOrSetter}}
-{{> member.getterSetter}}
-{{else}}
-{{#unless children}}{{> member.declaration}}{{/unless}}
-{{/if}}{{/if}}
-
-{{#each groups}}
-{{{compileGroup this}}}
-{{/each}}

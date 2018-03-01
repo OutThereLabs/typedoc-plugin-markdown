@@ -1,0 +1,8 @@
+{{#with comment}}
+{{#each tags}}
+{{#ifCond tagName '==' 'example'}}
+#### Example
+{{{text}}}
+{{/ifCond}}
+{{/each}}
+{{/with}}

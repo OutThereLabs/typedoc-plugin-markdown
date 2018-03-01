@@ -1,7 +1,5 @@
 `{{ name }}: {{#if isOptional}}?{{/if}} {{#if type}}{{{type}}}{{/if}} {{#if defaultValue}} = {{{ defaultValue}}}{{/if}}`
 
-{{{ compileSources this}}}
-
 {{> comment}}
 
 {{~#if type.declaration~}}
@@ -10,3 +8,5 @@
 {{> parameter}}
 {{~/with~}}
 {{~/if~}}
+
+{{{ compileSources this}}}

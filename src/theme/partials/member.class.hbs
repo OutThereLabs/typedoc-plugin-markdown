@@ -5,14 +5,7 @@
 {{/if}}
 
 {{>comment}}
-
-{{#if signatures}}
-{{> member.signatures}}
-{{else}}{{#if hasGetterOrSetter}}
-{{> member.getterSetter}}
-{{else}}
-{{#unless children}}{{> member.declaration}}{{/unless}}
-{{/if}}{{/if}}
+{{>example}}
 
 {{#each groups}}
 {{{compileGroup this}}}
