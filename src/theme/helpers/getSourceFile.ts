@@ -11,7 +11,7 @@ export function getSourceFile(fileName: string, line: string, url: string) {
     const bitbucketParams = `fileviewer=file-view-default#${fileName}-${line}`;
     md += `[${fileName}:${line}](${bitbucketUrl}?${bitbucketParams})`;
   } else if (options.mdSourceBranch && options.mdSourceRepo) {
-    const githubURL = `${options.mdSourceRepo}/blob/${options.mdSourceBranch}/src/${fileName}#L${line}`;
+    const githubURL = `${options.mdSourceRepo}/blob/${options.mdSourceBranch}/${options.mdSourceBasePath}/${fileName}#L${line}`;
     md += `[${fileName}:${line}](${githubURL})`;
   } else if (url) {
     md += `[${fileName}:${line}](${url})`;

@@ -33,6 +33,14 @@ module.exports = (PluginHost: Application) => {
   app.options.addDeclaration({
     component: 'markdown',
     defaultValue: '',
+    help: 'The path to your files',
+    name: 'mdSourceBasePath',
+    type: ParameterType.String,
+  });
+
+  app.options.addDeclaration({
+    component: 'markdown',
+    defaultValue: '',
     help: 'The repository to use for source files (ignored unless markdownFlavour is set)',
     name: 'mdSourceRepo',
     type: ParameterType.String,
