@@ -49,6 +49,6 @@ module.exports = (PluginHost: Application) => {
   /**
    * Add the plugin to the converter instance
    */
-  app.converter.addComponent('markdown', MarkdownPlugin);
+  app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 
 };
